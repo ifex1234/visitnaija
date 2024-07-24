@@ -1,11 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import { PEOPLE_URL } from "../constants";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import quote from "../../public/quote.svg";
 import folded from "../../public/folded-map.svg";
+import camp from "../../public/img-1.png";
+import camp2 from "../../public/img-2.png";
 
 interface CampProps {
-  backgroundImage: string;
+  backgroundImage: StaticImageData;
   title: string;
   subtitle: string;
   peopleJoined: string;
@@ -19,12 +21,16 @@ const CampSite = ({
 }: CampProps) => {
   return (
     <div
-      className={`h-full w-full min-w-[1100px] ${backgroundImage} bg-cover bg-no-repeat lg:rounded-r-5xl 2xl:rounded-5xl`}
+      className={`h-full overflow-hidden w-full min-w-[1100px] lg:rounded-r-5xl 2xl:rounded-5xl`}
     >
-      <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10">
+      <div className=" w-full">
+        <Image src={camp} alt="" />
+      </div>
+
+      <div className="flex flex-col items-start justify-between p-6 lg:px-20 lg:py-10 absolute">
         <div className="flexCenter gap-4">
           <div className="rounded-full bg-green-50 p-4">
-            <Image src={folded} alt="map" width={28} height={28} />
+            <Image src={backgroundImage} alt="map" width={28} height={28} />
           </div>
           <div className="flex flex-col gap-1">
             <h4 className="bold-18 text-white">{title}</h4>
@@ -32,7 +38,7 @@ const CampSite = ({
           </div>
         </div>
 
-        <div className="flexCenter gap-6">
+        <div className=" justify-center gap-6 -mt-24 z-30 absolute">
           <span className="flex -space-x-4 overflow-hidden">
             {PEOPLE_URL.map((url) => (
               <Image
@@ -54,24 +60,24 @@ const CampSite = ({
 
 const Camp = () => {
   return (
-    <section className="2xl:max-container relative flex flex-col py-10 lg:mb-10 lg:py-20 xl:mb-20">
-      <div className="hide-scrollbar flex h-[340px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[400px] xl:h-[640px]">
+    <section className="w-full relative flex flex-col py-10 lg:mb-10 lg:py-20 xl:mb-20 overflow-hidden">
+      <div className=" flex h-[340px] w-full items-start justify-start gap-8 overflow-x-hidden lg:h-[400px] xl:h-[640px]">
         <CampSite
-          backgroundImage="bg-bg-img-1"
+          backgroundImage={camp}
           title="Putuk Truno Camp"
           subtitle="Prigen, Pasuruan"
           peopleJoined="50+ Joined"
         />
         <CampSite
-          backgroundImage="bg-bg-img-2"
+          backgroundImage={camp2}
           title="Mountain View Camp"
           subtitle="Somewhere in the Wilderness"
           peopleJoined="50+ Joined"
         />
       </div>
 
-      <div className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6">
-        <div className="bg-green-50 p-8 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:px-16 xl:py-20 relative w-full overflow-hidden rounded-3xl">
+      <div className="mt-10 px-6 md:-mt-36 lg:mr-6 h-32 w-full lg:w-1/2 ">
+        <div className="bg-green-600 px-2 py-2 relative overflow-hidden">
           <h2 className="regular-24 md:regular-32 2xl:regular-64 capitalize text-white">
             <strong>Feeling Lost</strong> And Not Knowing The Way?
           </h2>
@@ -81,13 +87,6 @@ const Camp = () => {
             That's why we are here for those of you who want to start an
             adventure
           </p>
-          <Image
-            src={quote}
-            alt="camp-2"
-            width={186}
-            height={219}
-            className="camp-quote"
-          />
         </div>
       </div>
     </section>
