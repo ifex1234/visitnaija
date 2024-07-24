@@ -1,6 +1,9 @@
 import React from "react";
 import Button from "./Button";
 import Image from "next/image";
+import play from "../../public/play.svg";
+import apple from "../../public/apple.svg";
+import phones from "../../public/phones.png";
 
 const GetApp = () => {
   return (
@@ -17,14 +20,14 @@ const GetApp = () => {
             <Button
               type="button"
               title="App Store"
-              icon="/apple.svg"
+              icon={apple}
               variant="btn_white"
               full
             />
             <Button
               type="button"
               title="Play Store"
-              icon="/android.svg"
+              icon={play}
               variant="btn_dark_green_outline"
               full
             />
@@ -32,7 +35,7 @@ const GetApp = () => {
         </div>
 
         <div className="flex flex-1 items-center justify-end">
-          <Image src="/phones.png" alt="phones" width={550} height={870} />
+          <Image src={phones} alt="phones" width={550} height={870} />
         </div>
       </div>
     </section>

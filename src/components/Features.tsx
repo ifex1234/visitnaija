@@ -1,6 +1,8 @@
-import { FEATURES } from '@/constants'
-import Image from 'next/image'
-import React from 'react'
+import { FEATURES } from "@/constants";
+import Image from "next/image";
+import React from "react";
+import phone from "../../public/phone.png";
+import camp from "../../public/camp.svg";
 
 const Features = () => {
   return (
@@ -8,7 +10,7 @@ const Features = () => {
       <div className="max-container padding-container relative w-full flex justify-end">
         <div className="flex flex-1 lg:min-h-[900px]">
           <Image
-            src="/phone.png"
+            src={phone}
             alt="phone"
             width={440}
             height={1000}
@@ -17,9 +19,9 @@ const Features = () => {
         </div>
 
         <div className="z-20 flex w-full flex-col lg:w-[60%]">
-          <div className='relative'>
+          <div className="relative">
             <Image
-              src="/camp.svg"
+              src={camp}
               alt="camp"
               width={50}
               height={50}
@@ -29,9 +31,9 @@ const Features = () => {
           </div>
           <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:mg-20 lg:gap-20">
             {FEATURES.map((feature) => (
-              <FeatureItem 
+              <FeatureItem
                 key={feature.title}
-                title={feature.title} 
+                title={feature.title}
                 icon={feature.icon}
                 description={feature.description}
               />
@@ -40,14 +42,14 @@ const Features = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 type FeatureItem = {
   title: string;
   icon: string;
   description: string;
-}
+};
 
 const FeatureItem = ({ title, icon, description }: FeatureItem) => {
   return (
@@ -55,14 +57,12 @@ const FeatureItem = ({ title, icon, description }: FeatureItem) => {
       <div className="rounded-full p-4 lg:p-7 bg-green-50">
         <Image src={icon} alt="map" width={28} height={28} />
       </div>
-      <h2 className="bold-20 lg:bold-32 mt-5 capitalize">
-        {title}
-      </h2>
+      <h2 className="bold-20 lg:bold-32 mt-5 capitalize">{title}</h2>
       <p className="regular-16 mt-5 bg-white/80 text-gray-30 lg:mt-[30px] lg:bg-none">
         {description}
       </p>
     </li>
-  )
-}
+  );
+};
 
-export default Features
+export default Features;
