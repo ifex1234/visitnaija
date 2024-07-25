@@ -60,28 +60,63 @@ const CampSite = ({
 
 const Camp = () => {
   return (
-    <section className="w-full relative flex flex-col py-10 lg:mb-10 lg:py-20 xl:mb-20 overflow-hidden">
-      <div className=" flex h-[340px] w-full items-start justify-start gap-8 overflow-x-hidden lg:h-[400px] xl:h-[640px]">
-        <CampSite
-          backgroundImage={camp}
-          title="Putuk Truno Camp"
-          subtitle="Prigen, Pasuruan"
-          peopleJoined="50+ Joined"
-        />
-        <CampSite
-          backgroundImage={camp2}
-          title="Mountain View Camp"
-          subtitle="Somewhere in the Wilderness"
-          peopleJoined="50+ Joined"
-        />
+    // <section className="w-full relative flex flex-col py-10 lg:mb-10 lg:py-20 xl:mb-20 overflow-hidden">
+    //   <div className=" flex h-[340px] w-full items-start justify-start gap-8 overflow-x-hidden lg:h-[400px] xl:h-[640px]">
+    //     <CampSite
+    //       backgroundImage={camp}
+    //       title="Putuk Truno Camp"
+    //       subtitle="Prigen, Pasuruan"
+    //       peopleJoined="50+ Joined"
+    //     />
+    //     <CampSite
+    //       backgroundImage={camp2}
+    //       title="Mountain View Camp"
+    //       subtitle="Somewhere in the Wilderness"
+    //       peopleJoined="50+ Joined"
+    //     />
+    //   </div>
+
+    //   <div className="mt-10 px-6 md:-mt-36 lg:mr-6 h-32 w-full lg:w-1/2 ">
+    //     <div className="bg-green-600 px-2 py-2 relative overflow-hidden">
+    //       <h2 className="regular-24 md:regular-32 2xl:regular-64 capitalize text-white">
+    //         <strong>Feeling Lost</strong> And Not Knowing The Way?
+    //       </h2>
+    //       <p className="regular-14 xl:regular-16 mt-5 text-white">
+    //         Starting from the anxiety of the climbers when visiting a new
+    //         climbing location, the possibility of getting lost is very large.
+    //         That's why we are here for those of you who want to start an
+    //         adventure
+    //       </p>
+    //     </div>
+    //   </div>
+    // </section>
+    <section className=" w-full">
+      <div className=" w-full bg-black">
+        <Image src={camp} alt="" />
       </div>
 
-      <div className="mt-10 px-6 md:-mt-36 lg:mr-6 h-32 w-full lg:w-1/2 ">
-        <div className="bg-green-600 px-2 py-2 relative overflow-hidden">
-          <h2 className="regular-24 md:regular-32 2xl:regular-64 capitalize text-white">
+      <div className="relative flex flex-col lg:flex-row mt-0 lg:-mt-36 w-full justify-around min-h-64 lg:h-52 mb-5 gap-3">
+        <div className=" flex flex-row gap-6 items-center w-full lg:w-1/2">
+          <span className="flex -space-x-4">
+            {PEOPLE_URL.map((url) => (
+              <Image
+                className="inline-block h-10 w-10 rounded-full"
+                src={url}
+                key={url}
+                alt="person"
+                width={52}
+                height={52}
+              />
+            ))}
+          </span>
+          <p className=" font-semibold text-xl text-white">"50+ Joined</p>
+        </div>
+
+        <div className="bg-green-600 p-5 min-h-60 w-full lg:w-1/2 rounded-3xl pt-10">
+          <h2 className="capitalize text-white text-2xl">
             <strong>Feeling Lost</strong> And Not Knowing The Way?
           </h2>
-          <p className="regular-14 xl:regular-16 mt-5 text-white">
+          <p className="mt-5 text-white text-xl">
             Starting from the anxiety of the climbers when visiting a new
             climbing location, the possibility of getting lost is very large.
             That's why we are here for those of you who want to start an
