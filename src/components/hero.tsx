@@ -3,9 +3,10 @@ import star from "../../public/star.svg";
 import play from "../../public/play.svg";
 import hero_bg from "../../public/hero-bg.svg";
 import { Button } from "./ui/button";
+import { CarouselPlugin } from "./carousel";
 const Hero = () => {
   return (
-    <section className=" w-full flex flex-col px-3 gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row lg:container">
+    <section className=" w-full flex flex-col px-3 gap-20 py-10 pb-32 md:gap-28 lg:py-20 md:flex-row lg:container">
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
         <h1 className=" font-bold text-6xl">
           Premium Tourism Experience like no other
@@ -49,7 +50,7 @@ const Hero = () => {
       </div>
 
       <div className="relative flex flex-1 items-start w-1/2 ">
-        <Image src={hero_bg} alt="" />
+        {/* <Image src={hero_bg} alt="" /> */}
         {/* <div className="relative z-20 flex w-[268px] flex-col gap-8 rounded-3xl bg-green-90 px-7 py-8">
           <div className="flex flex-col">
             <div className="flexBetween">
@@ -68,8 +69,9 @@ const Hero = () => {
               <p className="regular-16 block text-gray-20">Elevation</p>
               <p className="bold-20 text-white">2.040 km</p>
             </div>
-          </div>
+          </div> 
         </div> */}
+        <CarouselPlugin />
       </div>
     </section>
   );

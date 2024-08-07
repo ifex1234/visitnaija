@@ -1,36 +1,26 @@
 import React from "react";
-import Button from "./Button";
 import Image from "next/image";
 import play from "../../public/play.svg";
 import apple from "../../public/apple.svg";
 import phones from "../../public/phones.png";
+import { Button } from "./ui/button";
 
 const GetApp = () => {
   return (
-    <section className="flexCenter w-full flex-col pb-[100px]">
-      <div className="get-app">
+    <section className="flex w-full flex-col pb-[100px] ">
+      <div className="bg-gray-950 flex md:container px-5 min-h-[500px]">
         <div className="z-20 flex w-full flex-1 flex-col items-start justify-center gap-12">
-          <h2 className="bold-40 lg:bold-64 xl:max-w-[320px]">
+          <h2 className="font-bold text-6xl xl:max-w-[320px] text-white">
             Get for free now!
           </h2>
-          <p className="regular-16 text-gray-10">
-            Available on iOS and Android
-          </p>
+          <p className="text-gray-50 text-lg">Available on iOS and Android</p>
           <div className="flex w-full flex-col gap-3 whitespace-nowrap xl:flex-row">
-            <Button
-              type="button"
-              title="App Store"
-              icon={apple}
-              variant="btn_white"
-              full
-            />
-            <Button
-              type="button"
-              title="Play Store"
-              icon={play}
-              variant="btn_dark_green_outline"
-              full
-            />
+            <Button className="w-64 bg-slate-50 h-14 rounded-md text-green-500 flex gap-x-4 text-lg font-semibold">
+              <Image src={apple} alt="" /> Apple store
+            </Button>
+            <Button className="w-64 bg-transparent border h-14 text-gray-50 flex gap-x-4 text-lg font-semibold">
+              <Image src={play} alt="" /> Play store
+            </Button>
           </div>
         </div>
 

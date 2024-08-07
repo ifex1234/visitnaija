@@ -4,10 +4,12 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import user from "../../public/user.svg";
+import { Drawer } from "./drawer";
+import { ModeToggle } from "./toggle";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-around w-full z-30 py-5 sticky top-0 text-slate-700  bg-slate-50">
+    <nav className="flex justify-between w-full z-30 py-5 sticky top-0 text-slate-700  bg-slate-50 px-5">
       <Link href="/">
         <h1 className=" text-green-700 text-2xl font-semibold">Visit9ja</h1>
       </Link>
@@ -31,15 +33,10 @@ const Navbar = () => {
       </div>
 
       <span className="flex justify-between gap-3">
-        <Button>switch</Button>
-
-        <Image
-          src="menu.svg"
-          alt="menu"
-          width={32}
-          height={32}
-          className="inline-block cursor-pointer lg:hidden"
-        />
+        <ModeToggle />
+        <span className=" lg:hidden">
+          <Drawer />
+        </span>
       </span>
     </nav>
   );

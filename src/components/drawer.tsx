@@ -12,39 +12,27 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { NAV_LINKS } from "@/constants";
+import { LucideMenu } from "lucide-react";
 
-export function SheetDemo() {
+export function Drawer() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline">
+          <LucideMenu />
+        </Button>
       </SheetTrigger>
       <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
-          </SheetDescription>
-        </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
-          </div>
-        </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
-        </SheetFooter>
+        <SheetClose asChild>
+          <ul>
+            {NAV_LINKS.map((links) => (
+              <li className="text-green-400 font-semibold my-4" key={links.key}>
+                {links.label}
+              </li>
+            ))}
+          </ul>
+        </SheetClose>
       </SheetContent>
     </Sheet>
   );

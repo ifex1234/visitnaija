@@ -53,7 +53,7 @@ export const FOOTER_LINKS = [
   {
     title: "Learn More",
     links: [
-      "About Hilink",
+      "About Visit9ja",
       "Press Releases",
       "Environment",
       "Jobs",
@@ -63,23 +63,27 @@ export const FOOTER_LINKS = [
   },
   {
     title: "Our Community",
-    links: ["Climbing xixixi", "Hiking hilink", "Hilink kinthill"],
+    links: [
+      "Rock climbing",
+      "Hiking Adventures",
+      "Waters and Fountains",
+      "Zoo visitation",
+    ],
   },
 ];
 
 export const FOOTER_CONTACT_INFO = {
   title: "Contact Us",
   links: [
-    { label: "Admin Officer", value: "123-456-7890" },
-    { label: "Email Officer", value: "hilink@akinthil.com" },
+    { label: "Admin Officer", value: "234-456-7890-547" },
+    { label: "Email Officer", value: "support@visit9ja.com" },
   ],
 };
 import fb from "../../public/facebook.svg";
 import x from "../../public/twitter.svg";
 import gram from "../../public/instagram.svg";
 import yt from "../../public/youtube.svg";
-import wp from "../../public/wordpress.svg";
 export const SOCIALS = {
   title: "Social",
-  links: [fb, x, gram, yt, wp],
+  links: [fb, x, gram, yt],
 };

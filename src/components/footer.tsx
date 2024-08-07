@@ -8,8 +8,11 @@ const Footer = () => {
     <footer className="flexCenter mb-24">
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-[10%] md:flex-row">
-          <Link href="/" className="mb-10">
-            <Image src={img1} alt="logo" width={74} height={29} />
+          <Link
+            href="/"
+            className="mb-10 font-semibold text-2xl text-green-500 px-4"
+          >
+            Visit9ja
           </Link>
 
           <div className="flex flex-wrap gap-10 sm:justify-between md:flex-1">
@@ -58,7 +61,7 @@ const Footer = () => {
 
         <div className="border bg-gray-20" />
         <p className="regular-14 w-full text-center text-gray-30">
-          2023 Hilink | All rights reserved
+          2024 IFEX | All rights reserved
         </p>
       </div>
     </footer>
@@ -72,8 +75,8 @@ type FooterColumnProps = {
 
 const FooterColumn = ({ title, children }: FooterColumnProps) => {
   return (
-    <div className="flex flex-col gap-5">
-      <h4 className="bold-18 whitespace-nowrap">{title}</h4>
+    <div className="flex flex-col gap-5 px-3">
+      <h4 className="font-bold text-xl">{title}</h4>
       {children}
     </div>
   );

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { ThemeProvider } from "@/components/themeProvider";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={` relative`}>
-        <Navbar />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+        </ThemeProvider>
       </body>
       <Footer />
     </html>
